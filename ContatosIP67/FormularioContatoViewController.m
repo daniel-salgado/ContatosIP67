@@ -26,6 +26,14 @@
         self.endereco.text = self.contato.endereco;
         self.site.text = self.contato.site;
         
+        if (self.contato.foto)
+        {
+            
+            [self.campoFoto setBackgroundImage:self.contato.foto forState:UIControlStateNormal];
+            [self.campoFoto setTitle:nil forState:UIControlStateNormal];
+            
+        }
+        
         
         UIBarButtonItem* botaoAlterar = [[UIBarButtonItem alloc]
                                          initWithTitle:@"Salvar"
@@ -35,10 +43,10 @@
         
         self.navigationItem.rightBarButtonItem = botaoAlterar;
         
-        
-        
-        
     }
+    
+    
+    [self.nome becomeFirstResponder]; //É um setFocus()
     
 }
 
@@ -149,17 +157,110 @@
     if (!_contato)
         _contato = [Contato new];
     
-    self.contato.nome = [self.nome text];
-    self.contato.telefone = [self.telefone text];
-    self.contato.endereco = [self.endereco text];
-    self.contato.email = [self.email text];
-    self.contato.site = [self.site text];
+    _contato.nome = [self.nome text];
+    _contato.telefone = [self.telefone text];
+    _contato.endereco = [self.endereco text];
+    _contato.email = [self.email text];
+    _contato.site = [self.site text];
+    _contato.foto = [self.campoFoto backgroundImageForState:UIControlStateNormal];
+    
     
     
 }
 
 
 
+-(IBAction)tiraFoto:(id)sender
+{
+    
+    //    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    //    {
+    //        //Camera indisponível
+    //        //usar biblioteca
+    //        UIImagePickerController* picker = [UIImagePickerController new];
+    //
+    //        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //
+    //        picker.allowsEditing = YES;
+    //
+    //        picker.delegate = self;
+    //
+    //        [self presentViewController: picker
+    //                           animated: YES
+    //                         completion: nil];
+    //
+    //    }
+    
+    
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        
+        UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto do contato"
+                                                              delegate:self
+                                                     cancelButtonTitle:@"Cancelar"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:@"Tirar foto", @"Escolher da biblioteca", nil];
+        [actionSheet showInView:self.view];
+        
+        
+    }
+    else
+    {
+        
+        UIImagePickerController* picker = [UIImagePickerController new];
+        
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        
+        [self presentViewController:picker animated:YES completion:nil];
+        
+    }
+    
+    
+}
 
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    
+    UIImage* foto = [info valueForKey:UIImagePickerControllerEditedImage];
+    
+    [self.campoFoto setBackgroundImage:foto forState:UIControlStateNormal];
+    [self.campoFoto setTitle:nil forState:UIControlStateNormal];
+    
+    [picker dismissViewControllerAnimated:YES
+                               completion:nil];
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    
+    UIImagePickerController * picker = [UIImagePickerController new];
+    
+    picker.delegate = self;
+    picker.allowsImageEditing = YES;
+    
+    switch (buttonIndex)
+    {
+     
+        case 0:
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            break;
+            
+        case 1:
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            break;
+            
+        default:
+            break;
+            
+    }
+
+    
+    [self presentViewController:picker animated:YES completion:nil];
+    
+    
+}
 
 @end

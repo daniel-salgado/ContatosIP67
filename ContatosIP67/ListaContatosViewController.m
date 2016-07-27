@@ -64,13 +64,8 @@
     UILongPressGestureRecognizer* cliqueLongo = [[UILongPressGestureRecognizer alloc]
                                                  initWithTarget:self
                                                  action:@selector(mostraMenu:)];
-    
-    
-    
-    
+
     [self.tableView addGestureRecognizer:cliqueLongo];
-    
-    
     
 }
 
@@ -80,19 +75,24 @@
     if (gesto.state == UIGestureRecognizerStateBegan)
     {
         
+        NSLog(@"Clique long acionado!");
+        
         CGPoint pontoClicadoXY = [gesto locationInView:self.tableView];
         
         NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:pontoClicadoXY];
-    
-        Contato* contato = self.dao.contatos[indexPath.row];
         
-        UIActionSheet* menu = [[UIActionSheet alloc]
-                                        initWithTitle:contato.nome
-                                             delegate:nil    //precisa implementar um método do UIActionSheet
-                                    cancelButtonTitle:@"Cancelar"
-                               destructiveButtonTitle:nil
-                                    otherButtonTitles:@"Ligar",@"E-mail",@"Mapa", @"Site", nil];
-    
+        if (indexPath)
+        {
+            
+            Contato* contato = self.dao.contatos[indexPath.row];
+            
+            _gerenciador = [[GerenciadorDeAcoes alloc] initWithContato:contato];
+            
+            [self.gerenciador acoesDoController:self];
+            
+            
+        }
+        
     }
     
 }
@@ -168,6 +168,13 @@ numberOfRowsInSection:(NSInteger)section
         linha = [[UITableViewCell alloc]
                  initWithStyle:UITableViewCellStyleDefault
                  reuseIdentifier:@"Linha"]; //Label da linha para ser identificada e reclicada para reduzir recursos do IOS
+        
+        UIView* backgorund = [UIView new];
+        
+        backgorund.backgroundColor = [UIColor cyanColor];
+        
+        linha.selectedBackgroundView = backgorund;
+        
     }
     
     

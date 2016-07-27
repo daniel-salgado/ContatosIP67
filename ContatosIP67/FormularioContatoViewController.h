@@ -10,7 +10,7 @@
 #import "Contato.h"
 #import "ContatoDAO.h"
 
-//Protocol é o mesmo que interface no C#. Cria uma assinatura para o método chamado. Poliformismo!!!
+//Protocol é o mesmo que interface no C#. Cria uma assinatura para o método chamado. Poliformismo
 @protocol LidaContatoCriado <NSObject>
 
 -(void)contatoAtualizado : (Contato* ) contato;
@@ -18,7 +18,7 @@
 
 @end
 
-@interface FormularioContatoViewController : UIViewController
+@interface FormularioContatoViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 //propriedade iboutlet para deixar visivel
 //Vinculo da variavel com layout
@@ -33,6 +33,10 @@
 @property (strong) Contato* contato;
 
 @property id <LidaContatoCriado> lista;
+
+@property IBOutlet UIButton* campoFoto;
+
+-(IBAction)tiraFoto:(id)sender;
 
 @end
 

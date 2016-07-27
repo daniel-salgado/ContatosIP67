@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "FormularioContatoViewController.h"
+#import "GerenciadorDeAcoes.h"
 
 @interface ListaContatosViewController : UITableViewController <LidaContatoCriado, UIActionSheetDelegate>
 
@@ -16,5 +17,8 @@
 @property ContatoDAO* dao;
 
 @property NSInteger posicao;
+
+@property (readonly) GerenciadorDeAcoes* gerenciador;
+
 
 @end

@@ -33,7 +33,14 @@
     
     UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:lista];
     
-    self.window.rootViewController = nav;
+    ContatosNoMapaViewController* mapa = [ContatosNoMapaViewController new];
+    
+    UITabBarController* tab = [UITabBarController new];
+    
+    tab.viewControllers = @[nav,mapa];
+    
+//    self.window.rootViewController = nav;
+    self.window.rootViewController = tab;
     
     return YES;
 }
