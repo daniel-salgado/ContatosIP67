@@ -11,4 +11,9 @@
 
 @interface ContatosNoMapaViewController : UIViewController
 
+
+@property IBOutlet MKMapView* mapa;
+
+@property CLLocationManager* manager;
+
 @end

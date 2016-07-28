@@ -37,6 +37,20 @@
         self.navigationItem.leftBarButtonItem = self.editButtonItem; //Para incuir botão para deletar itens da tableview
         
         
+        //Imagem no tabItem
+        
+        UIImage* iconeLista = [UIImage imageNamed:@"lista-contatos.png"];
+        
+        UITabBarItem* tab = [[UITabBarItem alloc] initWithTitle:@"Contatos"
+                                                          image:iconeLista
+                                                            tag:0];
+        self.tabBarItem = tab;
+        
+        self.navigationItem.title = @"Contatos";
+        
+        //Imagem no tabItem
+        
+        
     }
     
     return self;
@@ -64,7 +78,7 @@
     UILongPressGestureRecognizer* cliqueLongo = [[UILongPressGestureRecognizer alloc]
                                                  initWithTarget:self
                                                  action:@selector(mostraMenu:)];
-
+    
     [self.tableView addGestureRecognizer:cliqueLongo];
     
 }

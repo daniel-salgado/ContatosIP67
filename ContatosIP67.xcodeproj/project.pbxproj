@@ -13,6 +13,7 @@
 		B0BDB4EE1D3EDEF1009003D6 /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BDB4ED1D3EDEF1009003D6 /* Contato.m */; };
 		B0BDB4F11D3EF909009003D6 /* ContatoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BDB4F01D3EF909009003D6 /* ContatoDAO.m */; };
 		B0BDB4F41D3F0DC2009003D6 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BDB4F31D3F0DC2009003D6 /* ListaContatosViewController.m */; };
+		B0CDF2921D49887700C46567 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B0CDF2911D49887700C46567 /* Vila Mariana.gpx */; };
 		B0DB9BBA1D3D99FF0029762F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BB91D3D99FF0029762F /* main.m */; };
 		B0DB9BBD1D3D99FF0029762F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BBC1D3D99FF0029762F /* AppDelegate.m */; };
 		B0DB9BC01D3D99FF0029762F /* FormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BBF1D3D99FF0029762F /* FormularioContatoViewController.m */; };
@@ -35,6 +36,7 @@
 		B0BDB4F01D3EF909009003D6 /* ContatoDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContatoDAO.m; sourceTree = "<group>"; };
 		B0BDB4F21D3F0DC2009003D6 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		B0BDB4F31D3F0DC2009003D6 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
+		B0CDF2911D49887700C46567 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
 		B0DB9BB51D3D99FF0029762F /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DB9BB91D3D99FF0029762F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0DB9BBB1D3D99FF0029762F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		B0DB9BAC1D3D99FF0029762F = {
 			isa = PBXGroup;
 			children = (
+				B0CDF2911D49887700C46567 /* Vila Mariana.gpx */,
 				B02928C11D48421F0016AC64 /* MapKit.framework */,
 				B0F5D4961D46EE9E00C52B34 /* MessageUI.framework */,
 				B0DB9BB71D3D99FF0029762F /* ContatosIP67 */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0DB9BCB1D3D99FF0029762F /* LaunchScreen.storyboard in Resources */,
+				B0CDF2921D49887700C46567 /* Vila Mariana.gpx in Resources */,
 				B0DB9BC81D3D99FF0029762F /* Assets.xcassets in Resources */,
 				B02928C01D4841220016AC64 /* ContatosNoMapaViewController.xib in Resources */,
 				B0DB9BC31D3D99FF0029762F /* Main.storyboard in Resources */,
@@ -308,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.ContatosIP67;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -319,6 +324,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.ContatosIP67;
 				PRODUCT_NAME = "$(TARGET_NAME)";

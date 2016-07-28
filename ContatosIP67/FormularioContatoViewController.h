@@ -36,7 +36,16 @@
 
 @property IBOutlet UIButton* campoFoto;
 
+
+@property IBOutlet UITextField* latitude;
+@property IBOutlet UITextField* longitude;
+
+
+
+
 -(IBAction)tiraFoto:(id)sender;
+
+-(IBAction)buscarCoordenadas:(id)sender;
 
 @end
 

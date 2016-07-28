@@ -7,7 +7,7 @@
 //
 
 #import "FormularioContatoViewController.h"
-
+#import <CoreLocation/CoreLocation.h>
 
 @interface FormularioContatoViewController ()
 
@@ -23,8 +23,15 @@
         self.nome.text = self.contato.nome;
         self.telefone.text = self.contato.telefone;
         self.email.text = self.contato.email;
+        
         self.endereco.text = self.contato.endereco;
+        self.latitude.text = [self.contato.latitude stringValue];
+        self.longitude.text = [self.contato.longitude stringValue];
+        
+        
         self.site.text = self.contato.site;
+        
+        
         
         if (self.contato.foto)
         {
@@ -159,7 +166,11 @@
     
     _contato.nome = [self.nome text];
     _contato.telefone = [self.telefone text];
+    
     _contato.endereco = [self.endereco text];
+    _contato.latitude = [NSNumber numberWithFloat:[self.latitude.text floatValue]];
+    _contato.longitude = [NSNumber numberWithFloat:[self.longitude.text floatValue]];
+    
     _contato.email = [self.email text];
     _contato.site = [self.site text];
     _contato.foto = [self.campoFoto backgroundImageForState:UIControlStateNormal];
@@ -192,14 +203,14 @@
     //    }
     
     
-    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
         
         UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto do contato"
-                                                              delegate:self
-                                                     cancelButtonTitle:@"Cancelar"
-                                                destructiveButtonTitle:nil
-                                                     otherButtonTitles:@"Tirar foto", @"Escolher da biblioteca", nil];
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancelar"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Tirar foto", @"Escolher da biblioteca", nil];
         [actionSheet showInView:self.view];
         
         
@@ -239,11 +250,11 @@
     UIImagePickerController * picker = [UIImagePickerController new];
     
     picker.delegate = self;
-    picker.allowsImageEditing = YES;
+    picker.allowsEditing = YES;
     
     switch (buttonIndex)
     {
-     
+            
         case 0:
             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
             break;
@@ -256,11 +267,44 @@
             break;
             
     }
-
+    
     
     [self presentViewController:picker animated:YES completion:nil];
     
     
 }
+
+-(IBAction)buscarCoordenadas:(id)sender
+{
+    
+    CLGeocoder* geo = [CLGeocoder new];
+    
+    [geo geocodeAddressString: self.endereco.text completionHandler: ^(NSArray* resultados, NSError* erro)
+     {
+         if (erro == nil && resultados.count > 0)
+         {
+             
+             CLPlacemark* resultado = resultados[0];
+             
+             CLLocationCoordinate2D coord = resultado.location.coordinate;
+             
+             self.latitude.text = [NSString stringWithFormat:@"%f", coord.latitude];
+             self.longitude.text =[NSString stringWithFormat:@"%f", coord.longitude];
+             
+         }
+         
+     }
+     
+     
+     
+     
+     ];
+    
+    
+    
+    
+}
+
+
 
 @end
