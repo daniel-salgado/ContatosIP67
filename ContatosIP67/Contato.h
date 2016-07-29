@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreData/CoreData.h>
 
-@interface Contato : NSObject <MKAnnotation>
+//@interface Contato : NSObject <MKAnnotation>
+@interface Contato : NSManagedObject <MKAnnotation> //Alterada a herança para funcionar com o CoreData
+//feito isso não é mais possível instanciar o contato
+
 
 @property (strong) NSString* nome;
 @property (strong) NSString* telefone;
