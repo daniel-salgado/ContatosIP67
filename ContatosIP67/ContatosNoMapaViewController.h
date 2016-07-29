@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "ContatoDAO.h"
+
 
 @interface ContatosNoMapaViewController : UIViewController
 
@@ -15,5 +17,7 @@
 @property IBOutlet MKMapView* mapa;
 
 @property CLLocationManager* manager;
+
+@property ContatoDAO* dao;
 
 @end

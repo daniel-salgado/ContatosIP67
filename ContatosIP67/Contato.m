@@ -20,4 +20,19 @@
 }
 
 
+-(CLLocationCoordinate2D)coordinate //Tem que ser coordinate pois vem do MKAnnotation
+{
+    return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
+}
+
+-(NSString*)title
+{
+    return self.nome;
+}
+
+-(NSString*)subtitle
+{
+    return self.endereco;
+}
+
 @end

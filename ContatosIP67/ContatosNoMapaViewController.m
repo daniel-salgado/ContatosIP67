@@ -34,7 +34,7 @@
         
         self.tabBarItem = tab;
         
-        
+       
         
      
         
@@ -52,21 +52,34 @@
     
     MKUserTrackingBarButtonItem* botaoGps = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapa];
     
-    
     self.navigationItem.rightBarButtonItem = botaoGps;
     
     self.manager = [CLLocationManager new];
     
     [self.manager requestWhenInUseAuthorization];
+    
+    
+    
+    
 
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    //Pega os contatos para adicionar no mapa
+    self.dao = [ContatoDAO contatoDaoInstance];
+    
+    [self.mapa addAnnotations:self.dao.contatos];
+
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [self.mapa removeAnnotations:self.dao.contatos];
+    
+}
 
 
 /*

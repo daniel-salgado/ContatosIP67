@@ -274,11 +274,21 @@
     
 }
 
--(IBAction)buscarCoordenadas:(id)sender
+//-(IBAction)buscarCoordenadas:(id)sender  //sender é o objeto que disparou este método.
+-(IBAction)buscarCoordenadas:(UIButton*)sender  //sender é o objeto que disparou este método.
 {
+ 
+    //se for utilizar (id)sender
+//    UIButton* botao = (UIButton*)sender;
+//    [botao setHidden:YES]; //ou botao.hidden = YES
+    
+    [self.rodinha startAnimating];
+    
+    sender.hidden = YES;
     
     CLGeocoder* geo = [CLGeocoder new];
     
+    //O bloco restorna um array de resultados, mas vamos utilizar apenas 1.
     [geo geocodeAddressString: self.endereco.text completionHandler: ^(NSArray* resultados, NSError* erro)
      {
          if (erro == nil && resultados.count > 0)
@@ -288,10 +298,13 @@
              
              CLLocationCoordinate2D coord = resultado.location.coordinate;
              
-             self.latitude.text = [NSString stringWithFormat:@"%f", coord.latitude];
-             self.longitude.text =[NSString stringWithFormat:@"%f", coord.longitude];
+             self.latitude.text = [NSString stringWithFormat:@"%f", coord.latitude]; //Converte um tipo float para string utilizando o @"%f"
+             self.longitude.text = [NSString stringWithFormat:@"%f", coord.longitude];
              
          }
+         
+         [self.rodinha stopAnimating];
+         sender.hidden = NO;
          
      }
      

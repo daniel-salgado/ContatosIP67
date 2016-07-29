@@ -41,11 +41,14 @@
 @property IBOutlet UITextField* longitude;
 
 
-
+@property IBOutlet UIActivityIndicatorView* rodinha;
 
 -(IBAction)tiraFoto:(id)sender;
 
 -(IBAction)buscarCoordenadas:(id)sender;
+
+
+
 
 @end
 
