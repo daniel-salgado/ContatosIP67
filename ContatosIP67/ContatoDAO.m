@@ -12,24 +12,17 @@
 
 static ContatoDAO* defaultDao = nil;
 
--(void)adiciona : (Contato*) contato
-{
-    [self.contatos addObject:contato];
-    NSLog(@"Contatos: %@", self.contatos);
-    
-}
-
 //-(NSObject*)init ou -(id) init
 -(id) init
 {
- 
+    
     self = [super init];
     
     //nil significa nulo, null
     if (self)
     {
         self.contatos = [NSMutableArray new];
-        
+        self.coreData = [CoreDataInfra new];
     }
     
     return self;
@@ -47,10 +40,43 @@ static ContatoDAO* defaultDao = nil;
     return defaultDao;
 }
 
+-(void)adiciona : (Contato*) contato
+{
+    [self.contatos addObject:contato];
+    NSLog(@"Contatos: %@", self.contatos);
+    
+}
 
 -(Contato*)buscaContatoDaPosicao:(NSInteger)posicao
 {
     return self.contatos[posicao];
+}
+
+-(Contato*)criaNovoContato
+{
+    return [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:self.coreData.managedObjectContext];
+}
+-(void)salva
+{
+    
+    [self.coreData saveContext];
+    
+}
+
+-(void)listaContatos
+{
+    
+    NSFetchRequest* query = [NSFetchRequest fetchRequestWithEntityName:@"Contato"];
+    
+    NSSortDescriptor* ordermAlfabetica = [NSSortDescriptor sortDescriptorWithKey:@"nome" ascending:YES];
+    
+    query.sortDescriptors = @[ordermAlfabetica];
+    
+    
+    NSArray* retornoDaQuery = [self.coreData.managedObjectContext executeFetchRequest:query error:nil];
+    
+    self.contatos = [retornoDaQuery mutableCopy];
+    
 }
 
 

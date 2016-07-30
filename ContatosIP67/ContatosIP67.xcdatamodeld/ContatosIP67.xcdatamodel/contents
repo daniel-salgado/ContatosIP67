@@ -11,6 +11,6 @@
         <attribute name="telefone" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Contato" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Contato" positionX="-2574" positionY="-1665" width="128" height="163"/>
     </elements>
 </model>

@@ -81,6 +81,9 @@
     
     [self.tableView addGestureRecognizer:cliqueLongo];
     
+    [self.dao listaContatos];
+    
+    
 }
 
 -(void)mostraMenu: (UIGestureRecognizer*) gesto
@@ -210,9 +213,7 @@ numberOfRowsInSection:(NSInteger)section
 //Exibição dos dados na lista
 
 //Removendo item da TableView e DAO
--(void)tableView:(UITableView *)table
-commitEditingStyle:(UITableViewCellEditingStyle)style
-forRowAtIndexPath:(NSIndexPath *)path
+-(void)tableView:(UITableView *)table commitEditingStyle:(UITableViewCellEditingStyle)style forRowAtIndexPath:(NSIndexPath *)path
 {
     
     if (style == UITableViewCellEditingStyleDelete)

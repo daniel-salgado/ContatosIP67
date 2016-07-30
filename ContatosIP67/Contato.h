@@ -15,7 +15,6 @@
 @interface Contato : NSManagedObject <MKAnnotation> //Alterada a herança para funcionar com o CoreData
 //feito isso não é mais possível instanciar o contato
 
-
 @property (strong) NSString* nome;
 @property (strong) NSString* telefone;
 @property (strong) NSString* email;

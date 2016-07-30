@@ -116,6 +116,8 @@
         [self.lista contatoAdicionado:self.contato];
     }
     
+    [self.dao salva];
+    
     [self.navigationController popViewControllerAnimated:YES];
     
     
@@ -144,6 +146,8 @@
     if (self.lista)
     {
         [self.lista contatoAtualizado:self.contato];
+        
+        [self.dao salva];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -162,7 +166,10 @@
     
     
     if (!_contato)
-        _contato = [Contato new];
+    {
+        //_contato = [Contato new];
+        self.contato = [self.dao criaNovoContato];
+    }
     
     _contato.nome = [self.nome text];
     _contato.telefone = [self.telefone text];

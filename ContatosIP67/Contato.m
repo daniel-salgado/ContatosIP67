@@ -10,7 +10,7 @@
 
 @implementation Contato
 
-@dynamic nome,telefone,endereco,email,site,foto,latitude,longitude;
+@dynamic nome,telefone,endereco,email,site,foto,latitude,longitude; //
 
 //Override da description = toString() do C#
 -(NSString*)description
