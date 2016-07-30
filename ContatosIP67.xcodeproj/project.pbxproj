@@ -15,6 +15,7 @@
 		B0BDB4F11D3EF909009003D6 /* ContatoDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BDB4F01D3EF909009003D6 /* ContatoDAO.m */; };
 		B0BDB4F41D3F0DC2009003D6 /* ListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BDB4F31D3F0DC2009003D6 /* ListaContatosViewController.m */; };
 		B0CDF2921D49887700C46567 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B0CDF2911D49887700C46567 /* Vila Mariana.gpx */; };
+		B0D506EC1D4C14EB009FBC39 /* CoreDataInfra.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D506EB1D4C14EB009FBC39 /* CoreDataInfra.m */; };
 		B0DB9BBA1D3D99FF0029762F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BB91D3D99FF0029762F /* main.m */; };
 		B0DB9BBD1D3D99FF0029762F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BBC1D3D99FF0029762F /* AppDelegate.m */; };
 		B0DB9BC01D3D99FF0029762F /* FormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0DB9BBF1D3D99FF0029762F /* FormularioContatoViewController.m */; };
@@ -38,6 +39,8 @@
 		B0BDB4F21D3F0DC2009003D6 /* ListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaContatosViewController.h; sourceTree = "<group>"; };
 		B0BDB4F31D3F0DC2009003D6 /* ListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaContatosViewController.m; sourceTree = "<group>"; };
 		B0CDF2911D49887700C46567 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
+		B0D506EA1D4C14EB009FBC39 /* CoreDataInfra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataInfra.h; sourceTree = "<group>"; };
+		B0D506EB1D4C14EB009FBC39 /* CoreDataInfra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataInfra.m; sourceTree = "<group>"; };
 		B0DB9BB51D3D99FF0029762F /* ContatosIP67.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContatosIP67.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0DB9BB91D3D99FF0029762F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B0DB9BBB1D3D99FF0029762F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				B02928BC1D4841220016AC64 /* ContatosNoMapaViewController.h */,
 				B02928BD1D4841220016AC64 /* ContatosNoMapaViewController.m */,
 				B02928BE1D4841220016AC64 /* ContatosNoMapaViewController.xib */,
+				B0D506EA1D4C14EB009FBC39 /* CoreDataInfra.h */,
+				B0D506EB1D4C14EB009FBC39 /* CoreDataInfra.m */,
 				B0DB9BBE1D3D99FF0029762F /* FormularioContatoViewController.h */,
 				B0DB9BBF1D3D99FF0029762F /* FormularioContatoViewController.m */,
 				B0F5D4931D46C72E00C52B34 /* GerenciadorDeAcoes.h */,
@@ -275,6 +280,7 @@
 				B0BDB4F11D3EF909009003D6 /* ContatoDAO.m in Sources */,
 				B0DB9BC61D3D99FF0029762F /* ContatosIP67.xcdatamodeld in Sources */,
 				B0F5D4951D46C72E00C52B34 /* GerenciadorDeAcoes.m in Sources */,
+				B0D506EC1D4C14EB009FBC39 /* CoreDataInfra.m in Sources */,
 				B02928BF1D4841220016AC64 /* ContatosNoMapaViewController.m in Sources */,
 				B0DB9BBA1D3D99FF0029762F /* main.m in Sources */,
 			);
