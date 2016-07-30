@@ -5,5 +5,6 @@
 
 target 'ContatosIP67' do
 	pod 'TPKeyboardAvoiding'
+    pod 'AFNetworking'
 end
 

@@ -113,6 +113,13 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bXt-Io-ir7">
                                 <rect key="frame" x="246" y="282" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPY-4A-KJn">
+                                <rect key="frame" x="79" y="494" width="163" height="30"/>
+                                <state key="normal" title="Acessar Web Service"/>
+                                <connections>
+                                    <action selector="acessaWebService" destination="BYZ-38-t0r" eventType="touchUpInside" id="z0K-c0-sS5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

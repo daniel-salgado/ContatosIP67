@@ -8,6 +8,7 @@
 
 #import "FormularioContatoViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "AFNetworking.h"
 
 @interface FormularioContatoViewController ()
 
@@ -321,6 +322,49 @@
      ];
     
     
+    
+    
+}
+
+
+//WebService
+
+-(IBAction)acessaWebService
+{
+    
+    AFHTTPSessionManager* manager = [AFHTTPSessionManager manager];
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+    NSURL* url = [NSURL URLWithString:@"https://www.caelum.com.br/mobile"];
+    
+    
+    
+    
+    NSDictionary* params =
+    @{@"list": @[
+              @{@"aluno":
+                    @[
+              @{@"nome":@"Felipe", @"nota":@10},
+                @{@"nome":@"Felipe", @"nota":@5}
+              
+              ]}
+              ]
+      };
+    
+    
+    
+    [manager POST:url.absoluteString
+       parameters:params
+         progress:nil
+          success:^(NSURLSessionTask* operation, id responseObject){
+              NSLog(@"JSON %@", responseObject);
+          }
+     
+          failure:^(NSURLSessionTask* operation, NSError* error){
+              NSLog(@"Error: %@", error);
+          }
+     ];
     
     
 }
