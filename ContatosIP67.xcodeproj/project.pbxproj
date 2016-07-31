@@ -184,6 +184,7 @@
 				TargetAttributes = {
 					B0DB9BB41D3D99FF0029762F = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = VZHX2KA7FV;
 					};
 				};
 			};
@@ -393,11 +394,14 @@
 			baseConfigurationReference = E1E05BF551BEDD43EEF02728 /* Pods-ContatosIP67.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.ContatosIP67;
+				PRODUCT_BUNDLE_IDENTIFIER = dssProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -406,11 +410,14 @@
 			baseConfigurationReference = DADA8724A1CA8F869065943F /* Pods-ContatosIP67.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ContatosIP67/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.caelum.ContatosIP67;
+				PRODUCT_BUNDLE_IDENTIFIER = dssProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -210,6 +210,7 @@
     //
     //    }
     
+    [self.view endEditing:YES]; //Este comando serve para esconder o teclado
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -219,6 +220,9 @@
                                                         cancelButtonTitle:@"Cancelar"
                                                    destructiveButtonTitle:nil
                                                         otherButtonTitles:@"Tirar foto", @"Escolher da biblioteca", nil];
+        
+        
+        
         [actionSheet showInView:self.view];
         
         
