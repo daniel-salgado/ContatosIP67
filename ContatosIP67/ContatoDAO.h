@@ -26,5 +26,7 @@
 
 -(void)listaContatos;
 
+-(void)removeContato : (NSInteger*) posicaoDoContato;
+
 
 @end

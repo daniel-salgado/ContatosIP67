@@ -219,9 +219,15 @@ numberOfRowsInSection:(NSInteger)section
     if (style == UITableViewCellEditingStyleDelete)
     {
         
-        [self.dao.contatos removeObjectAtIndex:path.row];
+        //[self.dao.contatos removeObjectAtIndex:path.row];
+        
+        [self.dao removeContato: (NSInteger*)path.row];
         
         [table deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [self.dao salva];
+        
+        [table reloadData];
         
     }
     

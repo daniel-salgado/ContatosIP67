@@ -63,6 +63,19 @@ static ContatoDAO* defaultDao = nil;
     
 }
 
+-(void)removeContato : (NSInteger*) posicaoDoContato;
+{
+    
+    Contato* removeEsteContato = [self buscaContatoDaPosicao:*posicaoDoContato];
+    
+    [self.contatos removeObject:removeEsteContato];
+    
+    [self.coreData.managedObjectContext deleteObject:removeEsteContato];
+    
+    //[self.contatos removeObject:contato];
+    
+}
+
 -(void)listaContatos
 {
     
