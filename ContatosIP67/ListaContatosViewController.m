@@ -221,8 +221,9 @@ numberOfRowsInSection:(NSInteger)section
         
         //[self.dao.contatos removeObjectAtIndex:path.row];
         
-        [self.dao removeContato: (NSInteger*)path.row];
-        
+   
+        [self.dao removeContato:path];
+         
         [table deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
         
         [self.dao salva];
