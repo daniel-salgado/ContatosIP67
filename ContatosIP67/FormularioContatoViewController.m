@@ -42,6 +42,8 @@
             
         }
         
+        self.cep.text = self.contato.cep;
+        
         
         UIBarButtonItem* botaoAlterar = [[UIBarButtonItem alloc]
                                          initWithTitle:@"Salvar"
@@ -51,10 +53,15 @@
         
         self.navigationItem.rightBarButtonItem = botaoAlterar;
         
+       
     }
     
     
+     [self addDoneButtonOnKeyboard];
     [self.nome becomeFirstResponder]; //É um setFocus()
+    
+    
+    
     
 }
 
@@ -183,7 +190,7 @@
     _contato.site = [self.site text];
     _contato.foto = [self.campoFoto backgroundImageForState:UIControlStateNormal];
     
-    
+    self.contato.cep = [self.cep text];
     
 }
 
@@ -373,6 +380,33 @@
     
 }
 
+-(void)addDoneButtonOnKeyboard
+{
 
+    UIToolbar* toolbarDone = [UIToolbar new];
+
+    [toolbarDone sizeToFit];
+ 
+    UIBarButtonItem* barBtnDone = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneClicked)];
+    
+    UIBarButtonItem* flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
+    
+    toolbarDone.items =[NSArray arrayWithObjects:flex, barBtnDone,nil];
+    _cep.inputAccessoryView = toolbarDone;
+
+    //Para alinhar o botão "Done" à direita, é necessário colocar um botão flexible antes.
+    
+    
+}
+
+-(void)doneClicked
+{
+    
+    [super self];
+    
+    [self.view endEditing:YES];
+
+}
 
 @end

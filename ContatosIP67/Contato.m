@@ -10,14 +10,14 @@
 
 @implementation Contato
 
-@dynamic nome,telefone,endereco,email,site,foto,latitude,longitude; //
+@dynamic nome,telefone,cep,endereco,email,site,foto,latitude,longitude; //
 
 //Override da description = toString() do C#
 -(NSString*)description
 {
 
 //    return self.Nome;
-    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@, Endereço: %@, Site: %@",self.nome , self.telefone, self.email, self.endereco, self.site];
+    return [NSString stringWithFormat:@"Nome: %@, Telefone: %@, Email: %@,CEP: %@, Endereço: %@, Site: %@",self.nome , self.telefone, self.email, self.cep, self.endereco, self.site];
     
 }
 

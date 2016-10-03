@@ -26,5 +26,7 @@
 @property (strong) NSString* site;
 @property (strong) UIImage* foto;
 
+@property (strong) NSString* cep;
+
 
 @end

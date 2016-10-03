@@ -43,6 +43,8 @@
 
 @property IBOutlet UIActivityIndicatorView* rodinha;
 
+@property IBOutlet UITextField* cep;
+
 -(IBAction)tiraFoto:(id)sender;
 
 -(IBAction)buscarCoordenadas:(id)sender;
